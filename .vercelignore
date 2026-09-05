@@ -1,0 +1,6 @@
+.conversation
+.cache
+.local
+**/node_modules
+**/dist
+**/*.tsbuildinfo
