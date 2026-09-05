@@ -48,7 +48,7 @@
   --border: 38 25% 82%;
   --input: 38 25% 78%;
   --ring: 193 72% 25%;
-  --radius: .75rem;
+  --radius: .25rem;
   --app-font-sans: 'DM Sans', sans-serif;
   --app-font-serif: 'Fraunces', serif;
   --app-font-mono: 'DM Sans', sans-serif;
@@ -514,7 +514,6 @@ svg { stroke-width:1.8; }
 .empty-logo { width:48px; height:auto; margin:0 auto 8px; opacity:.55; }
 
 .partner-logo { max-height:100%; max-width:100%; object-fit:contain; }
-.footer-partner-logo { width:34px; height:28px; flex:none; filter:brightness(0) invert(1); opacity:.82; }
 .gov-strip-branding { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
 .gov-strip-logo { height:18px; width:auto; max-width:72px; object-fit:contain; }
 
@@ -550,10 +549,6 @@ svg { stroke-width:1.8; }
 .footer-partner:hover { background:hsl(42 38% 96% / .04); }
 
 .role-access-item { transition:background-color .2s ease, border-color .2s ease; }
-.role-access-item:hover .role-icon { transform:scale(1.06); transition:transform .2s ease; }
-.role-card { transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
-.role-card:hover { transform:translateY(-2px); border-color:hsl(var(--primary)); box-shadow:0 8px 24px hsl(213 36% 20% / .08); }
-
 .scholarship-card { transition:border-color .2s ease, box-shadow .2s ease; }
 .scholarship-card:hover { box-shadow:0 6px 20px hsl(213 36% 20% / .07); }
 
@@ -899,9 +894,29 @@ svg { stroke-width:1.8; }
 
 .role-access-item strong,
 .announcement-line strong,
-.ecosystem-copy strong,
-.footer-partner strong {
+.ecosystem-copy strong {
   color:hsl(var(--foreground));
+}
+
+.footer-partner strong {
+  color:hsl(42 38% 96% / .92);
+}
+
+.footer-partner small {
+  color:hsl(42 38% 96% / .72);
+}
+
+.footer-partners-label {
+  color:hsl(42 38% 96% / .62);
+}
+
+.footer-partner-logo {
+  width:34px;
+  height:28px;
+  flex:none;
+  object-fit:contain;
+  opacity:.92;
+  filter:brightness(0) invert(1);
 }
 
 .role-access-item:hover {
@@ -934,6 +949,7 @@ svg { stroke-width:1.8; }
 .footer-partner small { color:hsl(42 38% 96% / .72); }
 .footer-partners-label { color:hsl(42 38% 96% / .62); }
 .footer-bottom { color:hsl(42 38% 96% / .58); }
+.footer a:hover { color:hsl(42 38% 96% / .88); }
 
 /* Home — premium sections */
 .section-intro { margin-bottom:28px; }
@@ -1224,4 +1240,326 @@ svg { stroke-width:1.8; }
   }
   .journey-step-card:last-child,
   .metric-card:last-child { border-bottom:0; }
+}
+
+/* SPA responsive + gov polish */
+:root {
+  --page-gutter: clamp(16px, 4vw, 20px);
+}
+
+.container {
+  width: min(1180px, calc(100% - var(--page-gutter) * 2));
+}
+
+.nav { backdrop-filter: none; background: hsl(var(--card)); }
+.scholarship-card:hover { transform: none; box-shadow: none; }
+.role-card:hover { transform: none; box-shadow: none; border-color: hsl(var(--primary)); }
+.finder-card { box-shadow: none; }
+
+.mobile-nav-panel {
+  display: grid;
+  gap: 0;
+  padding: 0 0 16px;
+  border-bottom: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 12px 0;
+  border-bottom: 1px solid hsl(var(--border));
+  font-size: 14px;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: hsl(var(--primary));
+}
+
+.mobile-nav-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding-top: 14px;
+}
+
+.mobile-nav-actions .btn {
+  width: 100%;
+  min-height: 44px;
+}
+
+.dashboard-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .role-access-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .role-access-item {
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .role-access-item:nth-child(odd) {
+    border-right: 1px solid hsl(var(--border));
+  }
+
+  .role-access-item:nth-child(even) {
+    border-right: 0;
+  }
+
+  .role-access-item:nth-last-child(-n+2) {
+    border-bottom: 0;
+  }
+
+  .ecosystem-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ecosystem-tile {
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .ecosystem-tile:nth-child(3n) {
+    border-right: 0;
+  }
+
+  .ecosystem-tile:nth-last-child(-n+3) {
+    border-bottom: 0;
+  }
+
+  .footer-partners-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-partner:nth-child(3n) {
+    border-right: 0;
+  }
+
+  .academic-context {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .section-head .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .support-band-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .otr-panel {
+    border-left: 0;
+    border-top: 1px solid hsl(var(--border));
+    padding: 28px 0 0;
+  }
+
+  .announcement-line {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .announcement-line > span {
+    white-space: normal;
+    font-size: 11px;
+  }
+
+  .dashboard-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboard-head .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero.hero--gov .hero-grid {
+    padding: 32px 0 28px;
+  }
+}
+
+@media (max-width: 680px) {
+  .gov-strip-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  .gov-strip-ministry {
+    display: none;
+  }
+
+  .micro-tools {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .micro-tool-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .role-access-grid {
+    grid-template-columns: 1fr;
+    border-left: 0;
+  }
+
+  .role-access-item,
+  .role-access-item:nth-child(odd),
+  .role-access-item:nth-child(even) {
+    border-right: 0;
+    border-bottom: 1px solid hsl(var(--border));
+    min-height: 72px;
+  }
+
+  .role-access-item:last-child {
+    border-bottom: 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .footer-partners-row {
+    grid-template-columns: 1fr;
+    border-left: 0;
+  }
+
+  .footer-partner,
+  .footer-partner:nth-child(3n) {
+    border-right: 0;
+    border-bottom: 1px solid hsl(42 38% 96% / .13);
+  }
+
+  .footer-partner:last-child {
+    border-bottom: 0;
+  }
+
+  .doc-readiness-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .page {
+    padding: 32px 0 56px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar .select {
+    width: 100%;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .card-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-faq-actions {
+    flex-direction: column;
+  }
+
+  .home-faq-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ecosystem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ecosystem-tile,
+  .ecosystem-tile:nth-child(3n) {
+    border-right: 0;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  .ecosystem-tile:last-child {
+    border-bottom: 0;
+  }
+
+  .hero-banner-image {
+    min-height: 160px;
+    max-height: 200px;
+  }
+
+  .nav-desktop-only {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --page-gutter: 14px;
+  }
+
+  .brand-copy {
+    font-size: 13px;
+  }
+
+  .brand-copy small {
+    display: none;
+  }
+
+  .hero.hero--gov .hero-title {
+    font-size: 28px;
+  }
+
+  .hero.hero--gov .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-cta,
+  .hero-cta-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mobile-nav-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 44px 0;
+  }
+
+  .section-intro-title {
+    font-size: 26px;
+  }
 }
