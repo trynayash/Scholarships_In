@@ -224,3 +224,70 @@ textarea { min-height:100px; resize:vertical; }
 @media (max-width: 900px) { .nav-links { display:none; } .mobile-nav { display:flex; } .hero-grid { grid-template-columns:1fr; padding:70px 0; gap:35px; } .cards-3,.help-grid { grid-template-columns:repeat(2,1fr); } .detail-grid { grid-template-columns:1fr; } .detail-side { position:static; } .role-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width: 680px) { .container { width:min(100% - 28px,1180px); } .topbar-inner { justify-content:center; text-align:center; } .topbar-inner span:last-child { display:none; } .nav-inner { min-height:64px; } .brand-copy { font-size:13px; } .nav-actions .btn-outline { display:none; } .hero h1 { font-size:44px; } .section { padding:50px 0; } .cards-3,.results-grid,.form-grid,.help-grid,.role-grid,.summary-grid { grid-template-columns:1fr; } .finder-layout { grid-template-columns:1fr; gap:14px; } .progress-rail { position:static; display:flex; overflow:auto; gap:5px; } .rail-item { border-left:0; border-bottom:2px solid hsl(var(--border)); margin:0; padding:9px 11px; white-space:nowrap; } .rail-item.active { border-bottom-color:hsl(var(--primary)); } .rail-num { margin:0; } .finder-card,.form-card,.auth-card { padding:23px 18px; } .finder-card h1 { font-size:34px; } .option-grid { grid-template-columns:1fr; } .detail-hero { padding:26px 21px; } .footer-grid { grid-template-columns:1fr 1fr; } .footer-grid > div:first-child { grid-column:1/-1; } .footer-bottom { display:block; } .review-row { grid-template-columns:1fr; gap:4px; } .upload-row { align-items:start; } }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; animation:none!important; } }
+
+/* Art direction: a composed service desk, not a promotional template. */
+:root { --radius: .28rem; }
+body { letter-spacing: -.006em; }
+.topbar { background: hsl(213 36% 16%); font-size: 11px; }
+.topbar-inner { min-height: 30px; }
+.nav { box-shadow: 0 1px 0 hsl(213 36% 20% / .03); }
+.nav-inner { min-height: 76px; }
+.brand-mark { border-radius: 4px; }
+.brand-mark:after { display:none; }
+.brand-copy small { letter-spacing: .045em; }
+.nav-links { gap: 16px; }
+.nav-links a { padding: 7px 0; border-radius: 0; border-bottom: 2px solid transparent; }
+.nav-links a:hover, .nav-links a.active { background:transparent; border-bottom-color:hsl(var(--accent)); }
+.btn { border-radius: 4px; letter-spacing: -.005em; }
+.btn:hover { transform:none; }
+.hero { background:hsl(213 36% 16%); }
+.hero:before { display:none; }
+.hero-grid { min-height: 440px; grid-template-columns: 1.08fr .92fr; gap: 90px; }
+.hero h1 { font-size:clamp(38px, 4.7vw, 62px); letter-spacing:-.055em; max-width:600px; margin:12px 0 16px; }
+.hero p { max-width:500px; font-size:16px; line-height:1.6; }
+.hero-actions { margin-top:24px; }
+.journey-card { background:transparent; border:0; border-left:1px solid hsl(42 38% 97% / .33); border-radius:0; padding:4px 0 4px 30px; backdrop-filter:none; }
+.journey-card h3 { font:600 13px var(--app-font-sans); text-transform:uppercase; letter-spacing:.1em; color:hsl(42 38% 97% / .7); margin-bottom:12px; }
+.journey-step { grid-template-columns:24px 1fr; padding:13px 0; border-top:1px solid hsl(42 38% 97% / .12); }
+.step-dot { width:23px; height:23px; border-radius:50%; font-size:10px; }
+.journey-step strong { font-size:13px; }
+.journey-step span { font-size:12px; }
+.section { padding:66px 0; }
+.section h2 { font-size:clamp(27px, 3vw, 38px); }
+.cards-3 { gap:0; border-top:1px solid hsl(var(--border)); border-bottom:1px solid hsl(var(--border)); }
+.info-card { border:0; border-right:1px solid hsl(var(--border)); border-radius:0; box-shadow:none; padding:24px 22px 23px 0; min-height:180px; }
+.info-card + .info-card { padding-left:22px; }
+.info-card:last-child { border-right:0; padding-right:0; }
+.info-card .icon-box { border-radius:4px; width:32px; height:32px; margin-bottom:20px; }
+.scholarship-card, .panel, .auth-card { border-radius:5px; box-shadow:none; }
+.scholarship-card:hover { transform:none; border-color:hsl(var(--primary)); }
+.chip { border-radius:3px; padding:4px 7px; }
+.results-grid { gap:0; border-top:1px solid hsl(var(--border)); }
+.results-grid .scholarship-card { border-radius:0; border-top:0; border-bottom:1px solid hsl(var(--border)); }
+.results-grid .scholarship-card:nth-child(odd) { border-right:0; }
+.results-grid .scholarship-card:nth-child(even) { border-left:0; }
+.card-meta { margin:14px 0; }
+.notice { border-radius:4px; }
+.empty { border-radius:4px; }
+.finder-card { border-radius:5px; }
+.option { border-radius:4px; }
+.detail-hero { border-radius:5px; }
+.detail-side { border-radius:5px; }
+.status-banner { border-radius:4px; }
+.form-card { border-radius:5px; }
+.summary { border-radius:4px; box-shadow:none; }
+.timeline-dot { border-radius:50%; }
+.auth-wrap { background:hsl(var(--background)); }
+.auth-card { border-top:4px solid hsl(var(--primary)); }
+.help-cat { border-radius:0; }
+.role-card { border-radius:4px; }
+.upload-row { padding:16px 0; }
+.footer { background:hsl(213 36% 16%); }
+@media (max-width:680px) {
+  .hero-grid { min-height:0; padding:56px 0; gap:32px; }
+  .journey-card { padding-left:18px; }
+  .cards-3 { display:block; }
+  .info-card, .info-card + .info-card, .info-card:last-child { border-right:0; border-bottom:1px solid hsl(var(--border)); padding:21px 0; min-height:0; }
+  .info-card:last-child { border-bottom:0; }
+  .results-grid .scholarship-card { border-left:0; border-right:0; }
+}
