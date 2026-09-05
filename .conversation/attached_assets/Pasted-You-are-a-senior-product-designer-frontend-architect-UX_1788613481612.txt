@@ -1,0 +1,1425 @@
+You are a senior product designer + frontend architect + UX engineer.
+
+I am participating in a hackathon/event where we are redesigning the frontend of India's National Scholarship Portal (NSP).
+
+IMPORTANT:
+This is a FRONTEND REDESIGN ONLY.
+Do NOT change, create, migrate, or redesign any backend, APIs, database, authentication system, server logic, or business logic.
+Use mock/local data wherever necessary.
+The goal is a polished, high-fidelity frontend prototype that feels production-ready.
+
+I have provided a screenshot of the CURRENT NSP homepage. Use it as the baseline/reference for the existing information architecture and visual problems.
+
+REFERENCE:
+Current NSP homepage screenshot:
+[USE THE ATTACHED IMAGE AS REFERENCE]
+
+PROJECT GOAL
+Build a complete modern redesign of the National Scholarship Portal with a student-first experience.
+
+Core product idea:
+
+"NSP Reimagined — A student-first scholarship portal that helps citizens discover, understand, apply for, and track scholarships without needing to understand government bureaucracy."
+
+This must NOT look like a generic SaaS dashboard.
+It must feel like:
+- Government-grade
+- Trustworthy
+- Accessible
+- Modern
+- Indian civic-tech
+- Extremely clear
+- Fast
+- Professional
+- Mobile-first
+
+Do not make it overly futuristic.
+Do not use excessive gradients, glassmorphism, blobs, 3D graphics, or startup-style decoration.
+
+==================================================
+1. FIRST: INSPECT THE EXISTING PROJECT
+==================================================
+
+Before coding:
+
+1. Inspect the complete repository.
+2. Determine:
+   - framework
+   - routing
+   - component structure
+   - styling system
+   - package manager
+   - existing assets
+   - current pages
+   - existing API/backend integration
+3. Preserve the existing project architecture where practical.
+4. Do NOT replace working infrastructure unnecessarily.
+5. Reuse existing dependencies/components where possible.
+6. Do not touch backend code.
+
+If this is an empty frontend project, use:
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- shadcn/ui or a lightweight component system
+- Lucide icons
+
+Use clean reusable components.
+
+==================================================
+2. UX RESEARCH PRINCIPLES
+==================================================
+
+Base the redesign around the documented UX problems associated with NSP:
+
+- complex scholarship discovery
+- poor search flexibility
+- information overload
+- confusing forms
+- unclear validation/error states
+- registration/OTP friction
+- outdated dashboard experience
+- unclear application status
+- difficult institute/scholarship selection
+- mobile usability issues
+- accessibility issues
+- duplicate information/data entry
+- weak notifications and feedback
+
+Do NOT randomly redesign things.
+
+For every major redesign decision, ask:
+
+"Does this make a student's actual scholarship journey easier?"
+
+The primary journey is:
+
+DISCOVER
+→ CHECK ELIGIBILITY
+→ UNDERSTAND SCHOLARSHIP
+→ APPLY
+→ TRACK
+→ GET DISBURSEMENT
+
+==================================================
+3. DESIGN DIRECTION
+==================================================
+
+Create a premium Indian government/civic-tech design system.
+
+Visual characteristics:
+
+- clean
+- spacious
+- strong hierarchy
+- subtle Indian identity
+- trustworthy
+- modern typography
+- restrained use of government colors
+
+Suggested palette:
+
+Primary navy:
+#17324D
+
+Saffron accent:
+#E87524
+
+Green accent:
+#238B5A
+
+Background:
+#F7F8FA
+
+White:
+#FFFFFF
+
+Dark text:
+#17202A
+
+Muted text:
+#667085
+
+Borders:
+#E5E7EB
+
+Do not use all colors everywhere.
+
+Use color mainly for:
+- status
+- actions
+- emphasis
+- government identity
+
+Typography:
+
+Prefer:
+- Inter
+- Noto Sans
+- Noto Sans Devanagari for Hindi
+
+Large headings should feel editorial and confident.
+
+Example:
+
+"Find scholarships
+you may be eligible for."
+
+NOT:
+
+"Welcome to National Scholarship Portal"
+
+Use sentence-case UI copy wherever possible.
+
+==================================================
+4. GLOBAL HEADER
+==================================================
+
+Replace the old crowded header with a modern government header.
+
+Top government utility bar:
+
+Government of India
+Ministry of Electronics & Information Technology
+Digital India
+
+Right side:
+हिन्दी
+Accessibility
+Screen Reader
+Help
+
+Main header:
+
+NSP logo/branding
+Academic Year 2026–27
+
+Navigation:
+
+Scholarships
+Find Scholarships
+My Applications
+Documents
+Payments
+Help
+
+Primary CTA:
+
+Sign in
+
+Mobile:
+hamburger navigation
+
+Do not remove government identity.
+The redesign must still clearly communicate that this is an official government service.
+
+==================================================
+5. NEW HOMEPAGE
+==================================================
+
+Build an entirely new homepage.
+
+DO NOT reproduce the existing carousel.
+
+The current large image carousel consumes a lot of screen space without helping the user complete a task.
+
+Instead create:
+
+--------------------------------
+HERO
+--------------------------------
+
+Eyebrow:
+
+NATIONAL SCHOLARSHIP PORTAL
+
+Large headline:
+
+"Find financial support
+for your education."
+
+Supporting text:
+
+"Discover scholarships based on your education, location, income and eligibility."
+
+Primary CTA:
+
+"Find My Scholarships"
+
+Secondary CTA:
+
+"Track My Application"
+
+Add a subtle trust statement:
+
+"One portal for scholarships across India"
+
+On the right side, create a tasteful visual:
+- scholarship cards
+- student profile summary
+- subtle Indian academic imagery/illustration
+- no cartoonish AI visuals
+
+Hero must immediately communicate the main task.
+
+--------------------------------
+QUICK ACTIONS
+--------------------------------
+
+Create 5 modern action cards:
+
+Find Scholarships
+Apply for Scholarship
+Track Application
+Get OTR
+Manage Documents
+
+Each should have:
+icon
+short description
+arrow
+
+--------------------------------
+DEADLINE / IMPORTANT ALERT
+--------------------------------
+
+Add a highly visible "Important dates" section.
+
+Example:
+
+Scholarship applications closing soon
+
+3 scholarships closing this week
+
+Show cards with:
+
+Scholarship name
+deadline
+days remaining
+amount
+"View scholarship"
+
+Use urgency carefully.
+
+--------------------------------
+PERSONALIZED SCHOLARSHIPS
+--------------------------------
+
+Section:
+
+"Scholarships you may be eligible for"
+
+Create realistic mock scholarship cards.
+
+Each card should show:
+
+- scholarship name
+- organization/ministry
+- match percentage
+- amount
+- eligibility summary
+- deadline
+- category tags
+- CTA
+
+Example:
+
+PM-USP Central Sector Scholarship
+
+94% match
+
+Up to ₹20,000 / year
+
+Deadline:
+28 September 2026
+
+Tags:
+Merit
+Undergraduate
+Central Government
+
+Buttons:
+Check eligibility
+Apply
+
+Show 3–4 cards.
+
+--------------------------------
+APPLICATION STATUS
+--------------------------------
+
+Create a dashboard-style preview:
+
+"My applications"
+
+Example:
+
+PM Scholarship Scheme
+
+Application ID:
+NSP2026XXXX
+
+Progress:
+Registration
+✓
+Application Submitted
+✓
+Institute Verification
+✓
+District Verification
+●
+State Verification
+○
+Sanction
+○
+Payment
+○
+
+Status:
+"District verification in progress"
+
+Last updated:
+Today, 11:42 AM
+
+CTA:
+"View application"
+
+--------------------------------
+ANNOUNCEMENTS
+--------------------------------
+
+Do NOT create a giant text notice board.
+
+Use structured notification cards:
+
+Action required
+Scholarship deadline
+System update
+New scholarship
+
+Each should show:
+
+type
+title
+short explanation
+date
+action
+
+--------------------------------
+HOW NSP WORKS
+--------------------------------
+
+Show a simple 4-step flow:
+
+01
+Create your profile
+
+02
+Find eligible scholarships
+
+03
+Apply with verified documents
+
+04
+Track your application
+
+--------------------------------
+TRUST / BENEFITS
+--------------------------------
+
+Four trust points:
+
+One-time registration
+Verified information
+Transparent status tracking
+Direct scholarship disbursement
+
+Keep copy concise.
+
+--------------------------------
+ACCESSIBILITY
+--------------------------------
+
+Create a dedicated accessibility/language area:
+
+English
+हिन्दी
+Other languages
+
+Controls:
+Text size
+High contrast
+Screen reader support
+
+Do NOT fake functionality if it isn't implemented.
+Implement basic text-size/accessibility interactions where practical.
+
+--------------------------------
+FOOTER
+--------------------------------
+
+Modern government footer with:
+
+Government of India
+Ministry of Electronics & Information Technology
+National Scholarship Portal
+
+Important links
+
+Privacy
+Terms
+Disclaimer
+Copyright
+Accessibility
+Contact
+Sitemap
+
+Government logos can use existing assets if present.
+
+==================================================
+6. SCHOLARSHIP FINDER — MOST IMPORTANT FEATURE
+==================================================
+
+Build a complete scholarship discovery experience.
+
+Route:
+
+/scholarships/find
+
+This should be the strongest interactive feature in the prototype.
+
+Page:
+
+"Find scholarships for you"
+
+Subheading:
+
+"Answer a few questions and we'll show scholarships that may match your profile."
+
+Create a multi-step form.
+
+STEP 1:
+What are you studying?
+
+School
+Undergraduate
+Postgraduate
+PhD
+Professional/Technical
+
+STEP 2:
+Where do you study?
+
+State
+District
+Institution type
+
+STEP 3:
+Academic information
+
+Course
+Year
+Marks/percentage
+
+STEP 4:
+Financial information
+
+Annual family income
+
+STEP 5:
+Eligibility information
+
+Category
+Gender
+Disability
+Minority
+Special circumstances
+
+Use proper accessible controls.
+
+Show progress:
+
+Step 2 of 5
+
+Buttons:
+
+Back
+Continue
+
+At the end:
+
+"Find Scholarships"
+
+==================================================
+7. SCHOLARSHIP RESULTS PAGE
+==================================================
+
+Route:
+
+/scholarships
+
+Create realistic filtering/search interface.
+
+Top:
+
+17 scholarships found
+
+Search scholarships
+
+Filters:
+
+State
+Education level
+Category
+Income
+Amount
+Deadline
+Scholarship type
+Government level
+
+Sort:
+
+Best match
+Deadline
+Highest amount
+
+Cards should have:
+
+match %
+scholarship
+provider
+amount
+deadline
+eligibility
+tags
+
+Example:
+
+94% Match
+
+PM-USP Central Sector Scholarship
+
+Government of India
+
+₹10,000 – ₹20,000/year
+
+Application closes:
+28 September 2026
+
+Why you match:
+
+✓ Undergraduate student
+✓ Income within limit
+✓ Academic criteria met
+
+CTA:
+View details
+
+==================================================
+8. SCHOLARSHIP DETAILS PAGE
+==================================================
+
+Route:
+
+/scholarships/[id]
+
+Build a very polished detailed scholarship page.
+
+Header:
+
+Scholarship title
+
+Government organization
+
+Status:
+Applications open
+
+Amount
+
+Deadline
+
+Primary CTA:
+Apply now
+
+Secondary:
+Save scholarship
+
+Then sections:
+
+Overview
+Eligibility
+Benefits
+Documents required
+Application process
+Important dates
+Selection process
+FAQs
+
+Use sticky sidebar on desktop:
+
+Eligibility
+Documents
+Deadlines
+Apply
+
+On mobile, turn this into a bottom sticky Apply button.
+
+Show an eligibility summary:
+
+"You appear eligible"
+
+With a clear explanation.
+
+==================================================
+9. APPLICATION FLOW
+==================================================
+
+Build a frontend prototype of the application flow.
+
+Route:
+
+/apply/[id]
+
+Do NOT connect to a backend.
+
+Use local/mock state.
+
+Structure:
+
+Step 1:
+Personal details
+
+Step 2:
+Education
+
+Step 3:
+Bank/payment information
+
+Step 4:
+Documents
+
+Step 5:
+Review
+
+Step 6:
+Submit
+
+Top progress indicator.
+
+Important:
+Do not create giant government-style forms.
+
+Use:
+- sections
+- cards
+- field labels
+- descriptions
+- inline validation
+- helpful hints
+- error messages
+- completion states
+
+Show document upload cards:
+
+Aadhaar
+Income certificate
+Marksheet
+Bank document
+Caste certificate
+
+Each document:
+
+Not uploaded
+Uploaded
+Under verification
+Verified
+
+==================================================
+10. APPLICATION TRACKING
+==================================================
+
+Route:
+
+/applications
+
+This should feel like a modern application tracking system.
+
+Top summary:
+
+Active applications
+Pending verification
+Approved
+Payment pending
+Disbursed
+
+Then application cards.
+
+Each application includes:
+
+Scholarship
+Application ID
+Submitted date
+Current status
+Last updated
+Expected next step
+
+Detailed view:
+
+/applications/[id]
+
+Create a visual timeline:
+
+✓ Registration
+✓ Application submitted
+✓ Institute verification
+✓ District verification
+● State verification
+○ Sanction
+○ Payment initiated
+○ Payment credited
+
+Show:
+
+Current status
+
+What happens next
+
+Last updated
+
+Contact/help if delayed
+
+==================================================
+11. DOCUMENT CENTER
+==================================================
+
+Route:
+
+/documents
+
+Create a clean document management experience.
+
+Cards:
+
+Aadhaar
+Income certificate
+Marksheet
+Bank account
+Caste certificate
+Disability certificate
+
+Each shows status:
+
+Verified
+Pending
+Missing
+Expired
+
+Provide:
+
+Upload
+Replace
+View
+
+Make it feel like a trusted document wallet, but do not imply actual storage/security infrastructure beyond the prototype.
+
+==================================================
+12. OTR EXPERIENCE
+==================================================
+
+Route:
+
+/otr
+
+Create a modern explanation of One-Time Registration.
+
+Hero:
+
+"One registration.
+Every scholarship journey."
+
+Explain:
+
+- register once
+- reuse verified profile
+- simplify applications
+- track scholarships
+
+CTA:
+
+Get OTR
+
+Secondary:
+
+I already have an OTR
+
+Create a polished step flow.
+
+==================================================
+13. SIGN-IN / REGISTRATION
+==================================================
+
+Build frontend screens for:
+
+/login
+/register
+
+Registration should use a multi-step layout.
+
+Example:
+
+Identity
+Personal information
+Education
+Verification
+Complete
+
+OTP screen:
+
+Mobile number
+OTP inputs
+resend timer
+change number
+
+Make error states beautiful and clear.
+
+Examples:
+
+"Enter the 6-digit OTP"
+
+"The code expired. Request a new one."
+
+Avoid generic red error blocks.
+
+==================================================
+14. HELP / SUPPORT
+==================================================
+
+Route:
+
+/help
+
+Create a proper support center.
+
+Search:
+
+"What do you need help with?"
+
+Categories:
+
+Registration
+OTR
+Scholarship eligibility
+Application
+Documents
+Verification
+Payment
+Technical issues
+
+Include:
+
+FAQs
+Contact support
+Help articles
+Grievance option
+
+==================================================
+15. PUBLIC / INSTITUTE / OFFICER EXPERIENCE
+==================================================
+
+Do not completely ignore the current NSP role structure.
+
+Create a "Portal access" or role switcher for:
+
+Student
+Institution
+Officer
+Public
+
+But DO NOT make these giant colored boxes dominate the homepage.
+
+Create a page:
+
+/portal
+
+Explain each role.
+
+The student experience remains the primary focus.
+
+For the prototype, create basic dashboard placeholders for:
+
+/institution
+/officer
+
+These can share the design system but don't need the same depth as the student journey.
+
+==================================================
+16. MOBILE EXPERIENCE
+==================================================
+
+This is extremely important.
+
+Design mobile-first.
+
+Test every major page at:
+
+390px
+768px
+1024px
+1440px
+
+Mobile must not feel like a collapsed desktop.
+
+Mobile requirements:
+
+- bottom sticky primary CTA when appropriate
+- proper touch targets
+- readable typography
+- horizontal filter drawer
+- collapsible sections
+- responsive cards
+- clean navigation
+- no horizontal overflow
+- forms optimized for mobile
+- timeline remains readable
+
+==================================================
+17. ACCESSIBILITY
+==================================================
+
+Treat accessibility as a first-class feature.
+
+Implement:
+
+- semantic HTML
+- keyboard navigation
+- visible focus states
+- aria labels
+- accessible form controls
+- screen-reader-friendly structure
+- sufficient color contrast
+- minimum usable touch targets
+- skip-to-content
+- descriptive errors
+- accessible modal/dialog behavior
+- reduced-motion consideration
+
+Use accessible heading hierarchy.
+
+Do not rely on color alone for status.
+
+For example:
+
+✓ Verified
+● In progress
+! Action required
+
+not merely different colors.
+
+==================================================
+18. COMPONENT ARCHITECTURE
+==================================================
+
+Create reusable components.
+
+Suggested:
+
+components/
+  layout/
+    GovernmentBar
+    Header
+    Footer
+    MobileNav
+
+  navigation/
+    Breadcrumbs
+    Sidebar
+    Tabs
+
+  scholarship/
+    ScholarshipCard
+    ScholarshipFilters
+    ScholarshipMatch
+    ScholarshipTimeline
+    EligibilitySummary
+    ScholarshipHero
+
+  application/
+    ApplicationCard
+    ApplicationTimeline
+    ApplicationStatus
+    ApplicationStepper
+
+  forms/
+    FormField
+    SelectField
+    RadioGroup
+    FileUpload
+    OTPInput
+    FormSection
+
+  ui/
+    Button
+    Card
+    Badge
+    Modal
+    Alert
+    Progress
+    EmptyState
+    Skeleton
+
+Keep components composable and maintainable.
+
+==================================================
+19. MOCK DATA
+==================================================
+
+Create structured mock data for:
+
+scholarships
+applications
+documents
+announcements
+users
+eligibility
+deadlines
+
+Use realistic Indian scholarship examples and amounts where appropriate.
+
+IMPORTANT:
+Do not present fabricated data as official live government data.
+
+Clearly treat prototype content as mock/demo data where necessary.
+
+Keep data in dedicated files.
+
+Example:
+
+data/
+  scholarships.ts
+  applications.ts
+  documents.ts
+  announcements.ts
+
+==================================================
+20. INTERACTIONS
+==================================================
+
+The prototype must feel ALIVE.
+
+Implement:
+
+- scholarship search
+- filters
+- sorting
+- multi-step scholarship finder
+- eligibility result calculation using mock rules
+- save scholarship
+- application step navigation
+- document upload simulation
+- application tracking
+- tabs
+- modals
+- notifications
+- language selector UI
+- accessibility controls
+- mobile navigation
+
+Do not leave important buttons as dead links.
+
+Every primary CTA should lead somewhere useful.
+
+==================================================
+21. EMPTY / LOADING / ERROR STATES
+==================================================
+
+Do not only build ideal states.
+
+Create:
+
+Loading
+Empty
+Error
+Success
+Pending
+Verified
+Expired
+
+Example empty state:
+
+"No scholarships match your current filters."
+
+CTA:
+"Adjust filters"
+
+Example application error:
+
+"We couldn't load your application."
+
+CTA:
+"Try again"
+
+==================================================
+22. VISUAL DETAILS
+==================================================
+
+Add high-quality details:
+
+- subtle shadows
+- 10–16px corner radius where appropriate
+- clear card hierarchy
+- subtle hover states
+- smooth but restrained transitions
+- skeleton loaders
+- sticky headers where useful
+- clean dividers
+- strong spacing system
+
+Avoid:
+- excessive rounded pills
+- excessive shadows
+- neon colors
+- giant gradients
+- animated background effects
+- generic AI-dashboard aesthetic
+
+The UI should look like something that could realistically be adopted by a modern Indian government platform.
+
+==================================================
+23. DATA / BACKEND SAFETY
+==================================================
+
+CRITICAL:
+
+Do NOT:
+- modify backend
+- modify APIs
+- modify database
+- modify auth
+- invent new backend endpoints
+- add migrations
+- change server-side business logic
+
+If APIs already exist and are safe to consume, preserve existing integrations.
+
+For anything unavailable, use mocked local data.
+
+==================================================
+24. SEO / PERFORMANCE
+==================================================
+
+Implement good frontend fundamentals:
+
+- metadata
+- semantic HTML
+- responsive images
+- lazy loading where appropriate
+- optimized fonts
+- no unnecessary client components
+- loading states
+- clean URL structure
+
+Use appropriate page titles.
+
+Examples:
+
+"Find Scholarships | National Scholarship Portal"
+"Scholarship Details | National Scholarship Portal"
+"My Applications | National Scholarship Portal"
+
+==================================================
+25. DEMO / HACKATHON POLISH
+==================================================
+
+The final prototype should have a coherent demo story.
+
+The ideal demo flow:
+
+1. Homepage
+2. Click "Find My Scholarships"
+3. Answer 4–5 questions
+4. Show personalized scholarship results
+5. Open scholarship
+6. Show eligibility
+7. Click Apply
+8. Complete application steps
+9. Show application dashboard
+10. Open application tracking
+11. Show visual verification timeline
+
+A judge should understand the value within 30 seconds.
+
+==================================================
+26. BEFORE/AFTER THINKING
+==================================================
+
+Current NSP:
+
+Large banner
+↓
+Role boxes
+↓
+Announcements
+↓
+OTR
+↓
+Footer
+
+New NSP:
+
+User goal
+↓
+Find scholarship
+↓
+Personalized results
+↓
+Understand eligibility
+↓
+Apply
+↓
+Track
+↓
+Disbursement
+
+The redesigned architecture should revolve around the user's task, not government organizational structure.
+
+==================================================
+27. DO NOT LOSE GOVERNMENT TRUST
+==================================================
+
+Keep:
+
+- Government of India identity
+- Digital India identity where existing official assets are available
+- NSP identity
+- official-style footer
+- legal links
+- accessibility controls
+- language support
+- responsible wording
+
+Don't create fake government seals/logos.
+Don't imply that the prototype is an official replacement.
+
+The final visual language should communicate:
+
+"Modern government service"
+
+not
+
+"startup landing page".
+
+==================================================
+28. IMPLEMENTATION PROCESS
+==================================================
+
+Work in this exact sequence:
+
+PHASE 1
+Inspect repository and existing implementation.
+
+PHASE 2
+Create/clean design system:
+- tokens
+- typography
+- spacing
+- colors
+- components
+
+PHASE 3
+Build global layout:
+- government bar
+- header
+- navigation
+- footer
+
+PHASE 4
+Build homepage.
+
+PHASE 5
+Build scholarship finder.
+
+PHASE 6
+Build scholarship results.
+
+PHASE 7
+Build scholarship detail.
+
+PHASE 8
+Build application flow.
+
+PHASE 9
+Build application dashboard/tracking.
+
+PHASE 10
+Build documents + OTR + auth + help.
+
+PHASE 11
+Mobile optimization.
+
+PHASE 12
+Accessibility pass.
+
+PHASE 13
+Interaction/state pass.
+
+PHASE 14
+Final visual polish.
+
+==================================================
+29. QUALITY BAR
+==================================================
+
+Do not stop at scaffolding.
+
+Do not give me a list of components to build.
+
+Actually implement the pages.
+
+Do not leave TODO placeholders for the major UX.
+
+Do not use lorem ipsum.
+
+Do not create fake random copy just to fill space.
+
+Every screen should feel intentionally designed.
+
+The homepage should look dramatically better than the screenshot I provided.
+
+The scholarship finder should be the standout feature.
+
+The application tracking dashboard should be the second standout feature.
+
+==================================================
+30. FINAL VALIDATION
+==================================================
+
+After implementation:
+
+1. Run the project.
+2. Check for build errors.
+3. Fix TypeScript errors.
+4. Fix lint errors where applicable.
+5. Check all routes.
+6. Test desktop.
+7. Test mobile.
+8. Test keyboard navigation.
+9. Check visual consistency.
+10. Check that all primary buttons work.
+11. Check no horizontal overflow.
+12. Check loading/error/empty states.
+13. Check that existing backend code was not modified.
+
+Then give me a final concise report:
+
+- What was redesigned
+- Routes created/updated
+- Major UX improvements
+- Mock functionality implemented
+- Accessibility improvements
+- Any limitations
+- How to run the project
+
+DO NOT just describe what you would build.
+
+BUILD IT.

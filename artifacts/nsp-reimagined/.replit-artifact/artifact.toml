@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "NSP Reimagined"
+description = "A student-first National Scholarship Portal prototype that helps learners discover scholarships, understand eligibility, apply with confidence, and track application progress."
+version = "1.0.0"
+id = "artifacts/nsp-reimagined"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 26063
+
+[services.development]
+run = "pnpm --filter @workspace/nsp-reimagined run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/nsp-reimagined", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/nsp-reimagined/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "26063"
+BASE_PATH = "/"
