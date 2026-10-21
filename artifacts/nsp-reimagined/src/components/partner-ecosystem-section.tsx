@@ -7,14 +7,14 @@ export function PartnerEcosystemSection() {
       <div className="container">
         <div className="ecosystem-head">
           <div>
-            <div className="eyebrow">Partner and government links</div>
+            <div className="eyebrow">Government links</div>
             <h2 id="ecosystem-heading" className="serif">
-              Trusted ecosystem partners.
+              Related government services.
             </h2>
           </div>
           <p className="ecosystem-lead">
-            Official government and technology partners supporting scholarship delivery
-            across India.
+            Public government platforms that a scholarship portal connects to. This
+            prototype is not affiliated with them.
           </p>
         </div>
 

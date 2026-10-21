@@ -85,8 +85,8 @@ export const partnerList: Array<{
   name: string;
   description: string;
 }> = [
-  { key: 'meity', name: 'MeitY', description: 'Ministry partner' },
-  { key: 'nic', name: 'NIC', description: 'Technology partner' },
+  { key: 'meity', name: 'MeitY', description: 'Ministry' },
+  { key: 'nic', name: 'NIC', description: 'Government technology' },
   { key: 'mygov', name: 'myGov', description: 'Citizen platform' },
   { key: 'dbt', name: 'UIDAI / DBT', description: 'Payment rails' },
   { key: 'indiagov', name: 'India.gov.in', description: 'Public information' },

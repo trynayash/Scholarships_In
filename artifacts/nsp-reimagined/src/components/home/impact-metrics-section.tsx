@@ -4,8 +4,8 @@ import { StaggerChildren, StaggerItem } from '@/components/react-bits/stagger-ch
 
 const metrics = [
   { value: 5, suffix: '', label: 'Finder questions', detail: 'To reach a relevant shortlist' },
-  { value: 12, suffix: '+', label: 'Open schemes', detail: 'In this prototype catalogue' },
-  { value: 28, suffix: '', label: 'States & UTs', detail: 'National and state routes' },
+  { value: 5, suffix: '', label: 'Sample schemes', detail: 'In this prototype catalogue' },
+  { value: 5, suffix: '', label: 'Documents', detail: 'In the demo document centre' },
   { value: 4, suffix: '', label: 'Journey stages', detail: 'From apply to disbursement' },
 ] as const;
 

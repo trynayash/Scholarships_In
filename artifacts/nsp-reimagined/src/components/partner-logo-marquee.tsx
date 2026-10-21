@@ -23,7 +23,7 @@ export function PartnerLogoMarquee({ className = '' }: { className?: string }) {
       pauseOnHover
       fadeOut
       fadeOutColor="hsl(var(--background))"
-      ariaLabel="Government and technology partners"
+      ariaLabel="Related government services"
     />
   );
 }
